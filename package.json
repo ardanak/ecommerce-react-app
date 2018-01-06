@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-starter-kit",
-  "version": "3.0.1",
-  "description": "Get started with React, Redux, and React-Router!",
+  "name": "ecommerce-react-app",
+  "version": "1.0.0",
+  "description": "basic ecommerce app made with react-redux-starter-kit by davezuko",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
