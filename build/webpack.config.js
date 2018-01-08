@@ -120,6 +120,9 @@ config.module.rules.push({
             safe: true,
             sourcemap: project.sourcemaps,
           },
+          importLoaders: 1,
+          modules: true,
+          localIdentName: '[name]__[local]___[hash:base64:5]',
         },
       },
       {
@@ -139,7 +142,7 @@ config.plugins.push(extractStyles)
 // Images
 // ------------------------------------
 config.module.rules.push({
-  test    : /\.(png|jpg|gif)$/,
+  test    : /\.(png|jpg|gif|ico)$/,
   loader  : 'url-loader',
   options : {
     limit : 8192,
