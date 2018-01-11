@@ -1,19 +1,21 @@
 // ------------------------------------
 // Constants
 // ------------------------------------
-export const FETCHING_PRODUCTS = 'FETCHING_PRODUCTS';
+// export const FETCHING_PRODUCTS = 'FETCHING_PRODUCTS';
 export const FETCHING_ALL_PRODUCTS = 'FETCHING_ALL_PRODUCTS';
 export const RECEIVE_ALL_PRODUCTS = 'RECEIVE_ALL_PRODUCTS';
+export const FETCHING_FEATURED_PRODUCTS = 'FETCHING_FEATURED_PRODUCTS';
+export const RECEIVE_FEATURED_PRODUCTS = 'RECEIVE_FEATURED_PRODUCTS';
 
 // ------------------------------------
 // Actions
 // ------------------------------------
 
-export function fetchingProducts () {
-  return {
-    type : FETCHING_PRODUCTS
-  };
-}
+// export function fetchingProducts () {
+//   return {
+//     type : FETCHING_PRODUCTS
+//   };
+// }
 
 export function fetchingAllProducts () {
   return {
@@ -57,22 +59,46 @@ export function fetchAllProducts () {
   };
 }
 
+export function fetchingFeaturedProducts () {
+  return {
+    type: FETCHING_FEATURED_PRODUCTS
+  };
+}
+
+export function receiveFeaturedProducts (json) {
+  const { featured } = json;
+  return {
+    type: RECEIVE_FEATURED_PRODUCTS,
+    payload: featured
+  };
+}
+
+export function fetchFeaturedProducts () {
+  return (dispatch) => {
+    dispatch(fetchingFeaturedProducts());
+    return new Promise(() => {
+      const data = require('../../../data/data.json');
+      dispatch(receiveFeaturedProducts(data));
+    });
+  };
+}
+
 export const actions = {
-  fetchAllProducts
+  fetchAllProducts,
+  fetchFeaturedProducts
 };
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [FETCHING_PRODUCTS]: (state) => {
-    return ({
-      ...state,
-      fetching: true,
-    });
-  },
+  // [FETCHING_PRODUCTS]: (state) => {
+  //   return ({
+  //     ...state,
+  //     fetching: true,
+  //   });
+  // },
   [FETCHING_ALL_PRODUCTS]: (state) => {
-    console.log('state', state);
     return ({
       ...state,
       fetching: true,
@@ -87,6 +113,21 @@ const ACTION_HANDLERS = {
       products: action.payload
     });
   },
+  [FETCHING_FEATURED_PRODUCTS]: (state) => {
+    return ({
+      ...state,
+      fetching: true,
+      fetchingFeaturedProducts: true
+    });
+  },
+  [RECEIVE_FEATURED_PRODUCTS]: (state, action) => {
+    return ({
+      ...state,
+      fetching: false,
+      fetchingFeaturedProducts: false,
+      featured: action.payload
+    });
+  },
 };
 
 // ------------------------------------
@@ -95,7 +136,9 @@ const ACTION_HANDLERS = {
 const initialState = {
   fetching: false,
   fetchingAllProducts: false,
-  products: []
+  fetchingFeaturedProducts: false,
+  products: [],
+  featured: []
 };
 
 export default function productsReducer (state = initialState, action) {

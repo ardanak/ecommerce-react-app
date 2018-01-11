@@ -15,6 +15,9 @@ export const Header = () => (
             <h2 className={classes.h2}>Home</h2>
           </IndexLink></li>
           <li><Link to='/products'><h2 className={classes.h2}>Products</h2></Link></li>
+          {/* <li><Link to='/products'><h2 className={classes.h2}>Men's</h2></Link></li>
+          <li><Link to='/products'><h2 className={classes.h2}>Women's</h2></Link></li>
+          <li><Link to='/products'><h2 className={classes.h2}>Youth</h2></Link></li> */}
         </ul>
         <form className='navbar-form navbar-right'>
           <div className='form-group'>

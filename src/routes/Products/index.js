@@ -14,17 +14,12 @@ export default (store) => ({
       /*  Webpack - use require callback to define
           dependencies for bundling   */
       const Products = require('./containers/ProductsContainer').default;
-      const productsReducer = require('./modules/products').default;
 
       const currentState = store.getState();
       const { products: { products } } = currentState;
-      console.log(products.length == 0);
       if (products.length == 0) {
         store.dispatch(fetchAllProducts());
       }
-
-      /*  Add the reducer to the store on key 'products'  */
-      injectReducer(store, { key: 'products', reducer: productsReducer });
 
       /*  Return getComponent   */
       cb(null, Products);

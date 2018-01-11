@@ -30,5 +30,32 @@
       "img_src": "https://slimages.macysassets.com/is/image/MCY/products/4/optimized/8694454_fpx.tif?bgc=255,255,255&wid=224&qlt=90,0,0&layer=comp&op_sharpen=0&resMode=bicub&op_usm=0.7,1.0,0.5,0&fmt=jpeg",
       "price": 460.00
     }
+  ],
+  "featured": [
+    {
+      "productId": 3,
+      "name": "Calvin Klein Black Solid Modern-Fit Suit",
+      "img_src": "https://slimages.macysassets.com/is/image/MCY/products/8/optimized/3138378_fpx.tif?bgc=255,255,255&wid=224&qlt=90,0,0&layer=comp&op_sharpen=0&resMode=bicub&op_usm=0.7,1.0,0.5,0&fmt=jpeg"
+    },
+    {
+      "productId": 5,
+      "name": "Jones New York Faux-Fur Hooded Maxi Coat",
+      "img_src": "https://slimages.macysassets.com/is/image/MCY/products/4/optimized/8694454_fpx.tif?bgc=255,255,255&wid=224&qlt=90,0,0&layer=comp&op_sharpen=0&resMode=bicub&op_usm=0.7,1.0,0.5,0&fmt=jpeg"
+    },
+    {
+      "productId": 2,
+      "name": "Kenneth Cole Reaction Men's Slim-Fit Light-Gray Sharkskin Techni-Cole Suit",
+      "img_src": "https://slimages.macysassets.com/is/image/MCY/products/7/optimized/8713257_fpx.tif?bgc=255,255,255&wid=224&qlt=90,0,0&layer=comp&op_sharpen=0&resMode=bicub&op_usm=0.7,1.0,0.5,0&fmt=jpeg"
+    },
+    {
+      "productId": 1,
+      "name": "DKNY Men's Slim-Fit Charcoal Textured Suit",
+      "img_src": "https://slimages.macysassets.com/is/image/MCY/products/3/optimized/8911033_fpx.tif?bgc=255,255,255&wid=224&qlt=90,0,0&layer=comp&op_sharpen=0&resMode=bicub&op_usm=0.7,1.0,0.5,0&fmt=jpeg"
+    }
+  ],
+  "categories": [
+    "mens",
+    "womens",
+    "youth"
   ]
 }
