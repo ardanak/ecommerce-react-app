@@ -12,8 +12,8 @@ export const Products = ({ fetching, products, title }) => {
           <h2>{title}</h2>
         </div>}
       <hr />
-      {triple.map((product) => (
-        <div className='col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2'>
+      {triple.map((product, index) => (
+        <div key={index} className='col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2'>
           <div className={classes.product}>
             <div className={classes.productInner}>
               <div onClick='' className={classes.img}>

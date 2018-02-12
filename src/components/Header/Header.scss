@@ -1,7 +1,54 @@
 .h2 {
-  margin-top: 10px;
+  margin: 15px 0;
 }
 
-.nav {
-  // margin-top: 20px;
+.welcomeGuest {
+  display: inline;
+  font-size: 14px;
+  padding-right: 10px;
+  vertical-align: bottom;
 }
+
+// https://alistapart.com/article/dry-ing-out-your-sass-mixins
+$Placeholder-Selectors: ();
+
+@mixin button($bgcolor, $rtmargin, $extend: true) {
+	@include button-static($extend);
+	background-color: $bgcolor;
+  margin-right: $rtmargin;
+}
+
+@mixin button-static($extend: true) {
+	$button-selector: map-get($Placeholder-Selectors, 'button');
+	
+	@if $extend == true {
+		@if $button-selector == null {
+			$button-selector: unique-id();
+			$Placeholder-Selectors: map-merge($Placeholder-Selectors, ('button': $button-selector)) !global;
+			
+			@at-root %#{$button-selector} {
+				@include button-static(false);
+			}
+		}
+		@extend %#{$button-selector};
+	}
+	@else {
+    color: #fff;
+    // margin-right: 30px;
+    &:hover {
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      color: #fff;
+    }
+  }
+}
+
+.loginBtn {
+	@include button(#b33b3b, 30px);
+}
+.signupBtn {
+	@include button(#2b84a7, 0px);
+}
+.logoutBtn {
+	@include button(gray, 0px);
+}
+
